@@ -8,15 +8,21 @@ library(tseries)
 library(readr)
 library(ggfortify)
 library(DT)
+library(tm)
+library(dplyr)
+library(wordcloud)
+library(tidytext)
+library(RColorBrewer)
 
 ui <- dashboardPage(
-  dashboardHeader(title = tags$a(href='http://mycompanyishere.com',
+  dashboardHeader(title = tags$a(href='https://pagaresfacil.com/',
                                  tags$img(src='https://pagaresfacil.com/images/PagarBlanco.png', width = "100px"))),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Inicio", tabName = "inicio", icon = icon("home")),
       menuItem("Pre-Procesamiento Datos", tabName = "pre_procesamiento", icon = icon("th")),
-      menuItem("Series temporales", tabName = "time_series", icon = icon("th"))
+      menuItem("Nube de Palabras", tabName = "nube_palabras", icon = icon("cloud")),
+      menuItem("Series temporales", tabName = "time_series", icon = icon("chart-line"))
     )
   ),
   dashboardBody(
@@ -38,6 +44,18 @@ ui <- dashboardPage(
               fluidRow(
                 column(12, DT::dataTableOutput("mytable"))
               )),
+      tabItem(tabName = "nube_palabras",
+              h2("Nubes de palabras"),
+              fluidRow(
+                box(width=4,title = "Filtrado",column(12,  sliderInput("freq",
+                                                                       "Cantidad de Frecuencia:",
+                                                                       min = 1,  max = 50, value = 15),
+                                                      sliderInput("max",
+                                                                  "Número Máximo de Palabras:",
+                                                                  min = 1,  max = 300,  value = 100)
+                                                  )),
+                box(width=8,title = "Nube de Palabras",column(12,plotOutput("wordClouds")))
+              )),
     tabItem(
          tabName = "time_series",
             h2("Series temporales"),
@@ -54,9 +72,14 @@ ui <- dashboardPage(
             
              ),
          fluidRow(
-           column(4,box(width=12,title = "ARIMA",column(12,textOutput("arima_result"))), column(12,box(width=12,title = "Test de LJung-Box",column(12,textOutput("jung_box"))))),
+           box(width=12,title = "Descomposición",column(12,plotOutput("descompose")))
+         
+           
+         ),
+         fluidRow(
+           column(4,box(width=12,title = "Resultados del modelo ARIMA",column(12,textOutput("arima_result"))), column(12,box(width=12,title = "Test de LJung-Box",column(12,textOutput("jung_box"))))),
           
-           column(8,box(width=12,title = "Grafico Arima",column(12,plotOutput("plotArima"))))
+           column(8,box(width=12,title = "Diagnóstico del Modelo ARIMA",column(12,plotOutput("plotArima"))))
            
            
          ),
@@ -70,7 +93,16 @@ ui <- dashboardPage(
            box(width=12,title = "Gráfico ARIMA",column(12, plotOutput("plotPronostico")))
          ),
          fluidRow(
-           box(width=12,title = "Métricas ARIMA",column(12,DT::dataTableOutput("metricas"))),
+           box(width=12,title = "Indicadores de errores de pronóstico ARIMA",column(12,DT::dataTableOutput("metricas"))),
+           
+           
+           
+         ),
+         fluidRow(
+           box(width=12,title = "Gráfico HoltWinters",column(12, plotOutput("plotHoltWinters")))
+         ),
+         fluidRow(
+           box(width=12,title = "Indicadores de errores de pronóstico HoltWinters",column(12,DT::dataTableOutput("metricasHoltWinters"))),
            
            
            
@@ -94,10 +126,10 @@ server <- function(input, output){
                        ";", escape_double = FALSE, trim_ws = TRUE)
   
    # convertimos la data a series temporales
-  ventas<-ts(datosc$ventas_mensuales, start = c(2019,6), end=c(2025, 12), frequency = 12)
+  ventas<-ts(datosc$ventas_mensuales, start = c(2019,6), end=c(2022, 12), frequency = 12)
   #graficamos nuestra serie temporal
   
-  
+
 
   
   output$plotSerieTemporal1 <- renderPlot({
@@ -107,10 +139,18 @@ server <- function(input, output){
     
   })
   
+
+  
+  
   #CONVERTIR LA SERIE TEMPORAL EN ESTACIONARIA
   # Prueba ADF Augmented Dickey-Fuller (ADF) t-test 
-  estacionario= diff(ventas, differences = 2)
+  
+  #determina el numero de diferencias necesarias para la serie de tiempo, esto para hacerla estacionaria
+  ndiffs(ventas) # da resultado 1 
+  
+  estacionario= diff(ventas, differences = 1)
 
+ # estacionario <- ventas
   
   respuesta <- adf.test(estacionario, alternative = "stationary")
   
@@ -134,10 +174,10 @@ server <- function(input, output){
   #sirven para conocer cuantos medias moviles y cuantos auto regresivos utilizaremos en nuestra modelo ARIMA
   
   # autocovarianza 
-  acf <- autoplot(acf(ts(estacionario,frequency = 1)))
+  acf <- autoplot(acf(ts(estacionario)))
  
   # autcorrelacion parcial de la muestra 
-  plotPACF <- autoplot(pacf(ts(estacionario,frequency = 1)))
+  plotPACF <- autoplot(pacf(ts(estacionario)))
   
   output$plotACF <- renderPlot({
     
@@ -153,8 +193,22 @@ server <- function(input, output){
     
   })
   
-  modelo1 <- Arima(ventas, order=c(1,2,1))
   
+  
+  deSerie1 <- decompose(ventas, type="multiplicative")
+  
+  
+  output$descompose <- renderPlot({
+    
+    desco <- plot(deSerie1)
+    print(desco)
+    
+  })
+  
+ 
+  
+  modelo1 <- Arima(ventas, order=c(3,1,6)) #el primer parametro es el ACF, el 2do es el nro_diferencias y el 3er parametro es el PACF
+  modelo1
   
    #modelo1<- Arima(serie1, order=c(1,2,1), seasonal=list(order=c(1,2,1),period=12))
   
@@ -188,6 +242,31 @@ server <- function(input, output){
     print(pronos)
     
   })
+  
+  
+  #HoltWinters
+  
+  modeloHoltWinters <- HoltWinters(ventas) 
+  forecastHoltWinters <- predict(modeloHoltWinters, n.ahead = 12, prediction.interval = T, level = 0.95)
+  pronosticoHoltWinters <- forecast::forecast(modeloHoltWinters, h=12)
+  
+
+  
+  output$plotHoltWinters <- renderPlot({
+    
+    pronos1 <- plot(modeloHoltWinters, forecastHoltWinters)
+    print(pronos1)
+    
+  })
+  
+  output$metricasHoltWinters <- renderDataTable({
+    
+    myAccuracy <-   accuracy(pronosticoHoltWinters)
+    
+    myAccuracy <- as.data.frame(as.table(myAccuracy))
+    
+  })
+  
   
   
   
@@ -260,6 +339,21 @@ server <- function(input, output){
   
   output$ventas_no <- renderUI({
     infoBox("Ventas No Concretadas",width = '100%',color = "blue", ventas_concretadas_no,icon = icon("chart-line"), fill = TRUE)
+  })
+  
+  productos <- VCorpus(VectorSource(datosc$nombre_producto)) #convierte en arreglo el texfo
+  
+  productos <- tm_map(productos, content_transformer(tolower)) #convierte a miniculas
+  productos <- tm_map(productos, removePunctuation) #quita los signos de puntuacion
+  
+  colores <- brewer.pal(8, "Dark2") #para dar colores a las palabras
+  
+  output$wordClouds <- renderPlot({
+    
+    wordcloud(productos, scale=c(4,0.5),min.freq = input$freq, 
+              max.words=input$max, random.order=FALSE, rot.per=0.35, colors=colores)
+    
+   
   })
   
 }

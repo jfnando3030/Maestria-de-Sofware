@@ -12,13 +12,28 @@ library(readr)
 library(ggfortify)
 library(urca)
 
-datosc <- read_delim("D:/Maestria de Sofware/Maestria-de-Sofware/Ciencia de datos/Proyecto/ReporteVentas_PagarEsFacil_2020-02-07.csv", 
+#carga de datos
+datosc <- read_delim("D:/Maestria de Sofware/Maestria-de-Sofware/Ciencia de datos/Proyecto/ventas.csv", 
                      ";", escape_double = FALSE, trim_ws = TRUE)
+
+# convertimos la data a series temporales
+ventas<-ts(datosc$ventas_mensuales, start = c(2019,6), end=c(2022, 12), frequency = 12)
+#graficamos nuestra serie temporal
+
+diff.serie1.12<-diff(ventas, lag = 0)
+adf<-adf.test(diff.serie1.12, alternative = "stationary")
+adf$p.value
+
+#determina el numero de diferencias necesarias para la serie de tiempo, esto para hacerla estacionaria
+ndiffs(ventas) # da resultado 0 
 
 
 serie1<-ts(datosc$ganancias, start = c(2019,6), end=c(2030, 12), frequency = 12)
 ts.plot(serie1)
 print(serie1)
+
+diferencias <- ndiffs(serie1)
+diferencias[1]
 
 seriedif2= diff(serie1, differences = 2)
 
