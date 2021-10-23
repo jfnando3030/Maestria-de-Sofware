@@ -1,0 +1,11 @@
+Omar Ali, Mustafa Ally,  Clutterbuck, Yogesh Dwivedi,
+The state of play of blockchain technology in the financial services sector: A systematic literature review,
+International Journal of Information Management,
+Volume 54,
+2020,
+102199,
+ISSN 0268-4012,
+https://doi.org/10.1016/j.ijinfomgt.2020.102199.
+(https://www.sciencedirect.com/science/article/pii/S0268401219310928)
+Abstract: The modern trends of digitalization have completely transformed and reshaped business practices, whole businesses, and even a number of industries. Blockchain technology is believed to be the latest advancement in industries such as the financial sector, where trust is of prime significance. Blockchain technology is a decentralized and coded security system which provides the capability for new digital services and platforms to be created through this emerging technology. This research presents a systematic review of scholarly articles on blockchain technology in the financial sector. We commenced by considering 227 articles and subsequently filtered this list down to 87 articles. From this, we present a classification framework that has three dimensions: blockchain-enabled financial benefits, challenges, and functionality. This research identifies implications for future research and practice within the blockchain paradigm.
+Keywords: Blockchain technology; Blockchain benefits; Blockchain challenges; Blockchain functionality; Financial technologies
