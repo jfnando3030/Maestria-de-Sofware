@@ -1,0 +1,19 @@
+TY  - JOUR
+AU  - Wang, Zeli
+AU  - Jin, Hai
+AU  - Dai, Weiqi
+AU  - Choo, Kim-Kwang Raymond
+AU  - Zou, Deqing
+PY  - 2020
+DA  - 2020/10/02
+TI  - Ethereum smart contract security research: survey and future research opportunities
+JO  - Frontiers of Computer Science
+SP  - 152802
+VL  - 15
+IS  - 2
+AB  - Blockchain has recently emerged as a research trend, with potential applications in a broad range of industries and context. One particular successful Blockchain technology is smart contract, which is widely used in commercial settings (e.g., high value financial transactions). This, however, has security implications due to the potential to financially benefit from a security incident (e.g., identification and exploitation of a vulnerability in the smart contract or its implementation). Among, Ethereum is the most active and arresting. Hence, in this paper, we systematically review existing research efforts on Ethereum smart contract security, published between 2015 and 2019. Specifically, we focus on how smart contracts can be maliciously exploited and targeted, such as security issues of contract program model, vulnerabilities in the program and safety consideration introduced by program execution environment. We also identify potential research opportunities and future research agenda.
+SN  - 2095-2236
+UR  - https://doi.org/10.1007/s11704-020-9284-9
+DO  - 10.1007/s11704-020-9284-9
+ID  - Wang2020
+ER  - 
