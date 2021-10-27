@@ -1,0 +1,11 @@
+Arif Perdana, Alastair Robb, Vivek Balachandran, Fiona Rohde,
+Distributed ledger technology: Its evolutionary path and the road ahead,
+Information & Management,
+Volume 58, Issue 3,
+2021,
+103316,
+ISSN 0378-7206,
+https://doi.org/10.1016/j.im.2020.103316.
+(https://www.sciencedirect.com/science/article/pii/S0378720620302494)
+Abstract: Various arguments for and against distributed ledger technology (DLT) appear in the media. By analyzing DLT-related online English news articles from 2010 to 2018, first, we use organizing visions to investigate DLT’s history of evolving and expanding. Second, following the Gartner hype cycle stages, we observe how DLT may offer ripe opportunities for future inquiry. We found DLT’s diffusion was characterized by competing arguments. While DLT was initially viewed as somewhat questionable, communities collectively have (re)interpreted it favorably. DLT provides researchers with opportunities warranting further development in the information systems field.
+Keywords: Distributed ledger technology; Blockchain; Organizing vision; Technological diffusion; Text analysis
