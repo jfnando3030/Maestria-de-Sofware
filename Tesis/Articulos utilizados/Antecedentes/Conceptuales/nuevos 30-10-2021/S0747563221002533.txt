@@ -1,0 +1,11 @@
+Kevin F. Steinmetz, Alexandra Pimentel, W. Richard Goe,
+Performing social engineering: A qualitative study of information security deceptions,
+Computers in Human Behavior,
+Volume 124,
+2021,
+106930,
+ISSN 0747-5632,
+https://doi.org/10.1016/j.chb.2021.106930.
+(https://www.sciencedirect.com/science/article/pii/S0747563221002533)
+Abstract: Contemporary computer and networking technologies have expanded the scope and scale of deceptions worldwide. Among hackers, security practitioners, and other technologists, ruses designed to gain access to otherwise secure information or computer systems are often referred to as “social engineering.” To date, little research has explored the creation of fabrications from the perspective of social engineers. The current study addresses this gap by examining the attributes that social engineers ascribe to successful and effective social engineering deceptions through a grounded theory analysis of interviews with social engineers (n = 37). Results reveal twelve characteristics of effective social engineers according to participants–findings which indicate that perpetrators consider social context, assumptions about human nature, the complexities of social networks, the role of social conventions, and the limitations of human processing and reasoning in the execution of their deceptions. The study concludes by considering the theoretical implications of the results and advancing propositions to guide future criminological research on social engineering, fraud, and deception more generally.
+Keywords: Cybercrime; Social engineering; Symbolic interactionism; Practice theory; Qualitative analysis

@@ -1,0 +1,11 @@
+Qi Feng, Debiao He, Sherali Zeadally, Muhammad Khurram Khan, Neeraj Kumar,
+A survey on privacy protection in blockchain system,
+Journal of Network and Computer Applications,
+Volume 126,
+2019,
+Pages 45-58,
+ISSN 1084-8045,
+https://doi.org/10.1016/j.jnca.2018.10.020.
+(https://www.sciencedirect.com/science/article/pii/S1084804518303485)
+Abstract: Blockchain, as a decentralized and distributed public ledger technology in peer-to-peer network, has received considerable attention recently. It applies a linked block structure to verify and store data, and applies the trusted consensus mechanism to synchronize changes in data, which makes it possible to create a tamper-proof digital platform for storing and sharing data. It is believed that blockchain can be utilized in diverse Internet interactive systems (e.g., Internet of Things, supply chain systems, identity management, and so on). However, there are some privacy challenges that may hinder the applications of blockchain. The goal of this survey is to provide some insights into the privacy issues associated with blockchain. We analyze the privacy threats in blockchain and discuss existing cryptographic defense mechanisms, i.e., anonymity and transaction privacy preservation. Furthermore, we summarize some typical implementations of privacy preservation mechanisms in blockchain and explore future research challenges that still need to be addressed in order to preserve privacy when blockchain is used.
+Keywords: Privacy; Anonymity; Blockchain; Cryptography; Cryptocurrency

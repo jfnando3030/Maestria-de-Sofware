@@ -1,0 +1,11 @@
+Abdurrashid Ibrahim Sanka, Ray C.C. Cheung,
+A systematic review of blockchain scalability: Issues, solutions, analysis and future research,
+Journal of Network and Computer Applications,
+Volume 195,
+2021,
+103232,
+ISSN 1084-8045,
+https://doi.org/10.1016/j.jnca.2021.103232.
+(https://www.sciencedirect.com/science/article/pii/S1084804521002307)
+Abstract: Blockchain is an inspiring emerging technology that takes much attention from various researchers and companies. The technology offers various benefits such as data security, autonomy, immutability, transparency, and auditability. Hence, blockchain is getting large adoptions for various applications besides cryptocurrencies. Despite these benefits, scalability is a big challenge to blockchain impeding its mainstream adoption. This paper gives a systematic review of blockchain scalability. We follow a systematic process to investigate the research trend on blockchain scalability and review its state of the art. We review the various proposed solutions and methods for blockchain scalability. We also review the performance analysis of blockchain systems. We assess the proposed scalability solutions, deduce future research directions on the blockchain scalability, and finally discuss the blockchain adoption. We hope this paper will serve as a guide for learning and research on blockchain scalability.
+Keywords: Blockchain; Scalability; Throughput; Latency; Solutions; Analysis

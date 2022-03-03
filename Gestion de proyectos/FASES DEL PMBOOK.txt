@@ -1,0 +1,8 @@
+5 fases 
+10 
+
+PRINCE2 se utiliza para gesitonar proyectos, esta se base se centra en la administración de proyectos.
+PRINCE2 maneja como 7 principios
+
+LEAN Managament--> proviene de Toyota, es una herramienta trata de eliminar todo lo que no te genera valor en un proyecto, utiliza
+una minima cantidad de recursos osea solamente lo necesario para cumplir con el proyecto

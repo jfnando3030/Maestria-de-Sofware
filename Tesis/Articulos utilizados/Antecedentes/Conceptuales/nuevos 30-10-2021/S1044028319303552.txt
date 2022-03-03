@@ -1,0 +1,10 @@
+Nida Khan, Bilal Kchouri, Nissar Ahmad Yatoo, Zsofia Kräussl, Anass Patel, Radu State,
+Tokenization of sukuk: Ethereum case study,
+Global Finance Journal,
+2020,
+100539,
+ISSN 1044-0283,
+https://doi.org/10.1016/j.gfj.2020.100539.
+(https://www.sciencedirect.com/science/article/pii/S1044028319303552)
+Abstract: Sukuk is a financial instrument that provides returns similar to conventional bonds. It has served to cater to the capital requirements of big corporations and governments, while circumventing interest to adhere to the Shariah law. Sukuk can be touted as Shariah-compliant bonds that rank among the most successful and the fastest growing financial instrument in the Islamic economy. The sukuk research area is marked by a dearth of quantitative literature, compared to qualitative academic work. This paper seeks to fill this existing gap, and introduces a novel, exploratory analysis of sukuk tokenization based on a case study. The funding needs of small and medium enterprises remains largely unmet through sukuk on account of the high costs involved, among other reasons. As we show in this paper, blockchains can aid to lower the cost incurred through the tokenization of sukuk. We highlight some of the key challenges involved in the issuance of sukuk and discuss their resolution using blockchain. We also provide a taxonomy of blockchain applications in finance, with a particular focus on Islamic finance. Our paper reviews different blockchain architectures to assess their viability for tokenization. We conduct a novel case study on sukuk tokenization by implementing a basic smart contract for Sukuk al-Murabaha on Ethereum. The paper concludes by a conceptual analysis of feasibility concerns, based on a comparison of the conducted cost-benefit analysis of conventional sukuk issuance with tokenization.
+Keywords: Sukuk; Blockchain; Ethereum; Tokenization; Smart contract; Cost-benefit analysis

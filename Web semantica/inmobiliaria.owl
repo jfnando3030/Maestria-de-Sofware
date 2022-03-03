@@ -1,0 +1,284 @@
+@prefix : <http://www.inmobiliaria.com#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.inmobiliaria.com> .
+
+<http://www.inmobiliaria.com> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.inmobiliaria.com#es_un
+:es_un rdf:type owl:ObjectProperty ,
+                owl:SymmetricProperty ;
+       rdfs:domain :Casas ,
+                   :Lotes ;
+       rdfs:range :Bienes .
+
+
+###  http://www.inmobiliaria.com#gestiona
+:gestiona rdf:type owl:ObjectProperty ,
+                   owl:AsymmetricProperty ;
+          rdfs:domain :Inmobiliaria ;
+          rdfs:range :Bienes .
+
+
+###  http://www.inmobiliaria.com#gestionado_por
+:gestionado_por rdf:type owl:ObjectProperty ,
+                         owl:AsymmetricProperty ;
+                rdfs:domain :Bienes ;
+                rdfs:range :Inmobiliaria .
+
+
+###  http://www.inmobiliaria.com#tiene3dimensiones
+:tiene3dimensiones rdf:type owl:ObjectProperty ,
+                            owl:ReflexiveProperty ;
+                   rdfs:domain :Casas .
+
+
+###  http://www.inmobiliaria.com#tiene_servicios_basicos
+:tiene_servicios_basicos rdf:type owl:ObjectProperty ,
+                                  owl:AsymmetricProperty ;
+                         rdfs:domain :Ubicacion ;
+                         rdfs:range :Servicios .
+
+
+###  http://www.inmobiliaria.com#ubicado_en
+:ubicado_en rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Bienes ,
+                        :Inmobiliaria ;
+            rdfs:range :Ubicacion .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.inmobiliaria.com#cantidad_baños
+:cantidad_baños rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Casas ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.inmobiliaria.com#cantidad_dormitorios
+:cantidad_dormitorios rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Casas ;
+                      rdfs:range xsd:integer .
+
+
+###  http://www.inmobiliaria.com#ciudad
+:ciudad rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Ubicacion ;
+        rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#direccion
+:direccion rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Ubicacion ;
+           rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#latitud
+:latitud rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Ubicacion ;
+         rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#longitud
+:longitud rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Ubicacion ;
+          rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#monedas
+:monedas rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Bienes ;
+         rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#nombreInmobiliaria
+:nombreInmobiliaria rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Inmobiliaria ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#nombreLote
+:nombreLote rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Lotes ;
+            rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#pais
+:pais rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Ubicacion ;
+      rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#precio_oferta
+:precio_oferta rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Bienes ;
+               rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#precio_tope
+:precio_tope rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Bienes ;
+             rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#provincia
+:provincia rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Ubicacion ;
+           rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#superficieLargo
+:superficieLargo rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Bienes ;
+                 rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#superficie_alto
+:superficie_alto rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Casas ;
+                 rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#superficie_ancho
+:superficie_ancho rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Bienes ;
+                  rdfs:range xsd:double .
+
+
+###  http://www.inmobiliaria.com#tiene_garaje
+:tiene_garaje rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Casas ;
+              rdfs:range xsd:boolean .
+
+
+###  http://www.inmobiliaria.com#tiene_patio
+:tiene_patio rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Casas ;
+             rdfs:range xsd:boolean .
+
+
+###  http://www.inmobiliaria.com#tipo_servicio
+:tipo_servicio rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Servicios ;
+               rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#urbanizacion
+:urbanizacion rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Ubicacion ;
+              rdfs:range xsd:string .
+
+
+###  http://www.inmobiliaria.com#valor_venta
+:valor_venta rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Bienes ;
+             rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.inmobiliaria.com#Bienes
+:Bienes rdf:type owl:Class .
+
+
+###  http://www.inmobiliaria.com#Casas
+:Casas rdf:type owl:Class ;
+       rdfs:subClassOf :Bienes .
+
+
+###  http://www.inmobiliaria.com#Inmobiliaria
+:Inmobiliaria rdf:type owl:Class .
+
+
+###  http://www.inmobiliaria.com#Lotes
+:Lotes rdf:type owl:Class ;
+       rdfs:subClassOf :Bienes .
+
+
+###  http://www.inmobiliaria.com#Servicios
+:Servicios rdf:type owl:Class .
+
+
+###  http://www.inmobiliaria.com#Ubicacion
+:Ubicacion rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.inmobiliaria.com#Bienes
+:Bienes rdf:type owl:NamedIndividual ,
+                 :Bienes ;
+        :gestionado_por :GoldenPlaceInmobiliaria ;
+        :ubicado_en :Machala ;
+        :monedas "dólares"^^xsd:string ;
+        :precio_oferta "40.0"^^xsd:double ;
+        :precio_tope "50.0"^^xsd:double ;
+        :superficieLargo 200 ;
+        :superficie_ancho 400 ;
+        :valor_venta "45000.0"^^xsd:double .
+
+
+###  http://www.inmobiliaria.com#GoldenPlaceInmobiliaria
+:GoldenPlaceInmobiliaria rdf:type owl:NamedIndividual ,
+                                  :Inmobiliaria ;
+                         :gestiona :LasAcacias ;
+                         :ubicado_en :Machala ;
+                         :nombreInmobiliaria "Golden Place Inmobiliaria" .
+
+
+###  http://www.inmobiliaria.com#LasAcacias
+:LasAcacias rdf:type owl:NamedIndividual ,
+                     :Bienes ,
+                     :Casas ;
+            :es_un :Bienes ;
+            :gestionado_por :GoldenPlaceInmobiliaria ;
+            :tiene_servicios_basicos :Luz ;
+            :ubicado_en :Machala ;
+            :cantidad_baños 2 ;
+            :cantidad_dormitorios 5 ;
+            :superficie_alto 200 ;
+            :tiene_garaje "true"^^xsd:boolean ;
+            :tiene_patio "true"^^xsd:boolean .
+
+
+###  http://www.inmobiliaria.com#Luz
+:Luz rdf:type owl:NamedIndividual ,
+              :Servicios ;
+     :tipo_servicio "Eléctrico" .
+
+
+###  http://www.inmobiliaria.com#Machala
+:Machala rdf:type owl:NamedIndividual ,
+                  :Ubicacion ;
+         :tiene_servicios_basicos :Luz ;
+         :ciudad "Machala" ;
+         :direccion "Av. Madero Vargas" ;
+         :latitud 30 ;
+         :longitud 25 ;
+         :pais "Ecuador" ;
+         :urbanizacion "Ciudadela" .
+
+
+###  http://www.inmobiliaria.com#terreno1950A
+:terreno1950A rdf:type owl:NamedIndividual ,
+                       :Bienes ,
+                       :Lotes ;
+              :es_un :Bienes ;
+              :nombreLote "Terreno1950A" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

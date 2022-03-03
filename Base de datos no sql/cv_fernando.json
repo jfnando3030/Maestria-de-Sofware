@@ -1,0 +1,140 @@
+{
+  "id": "fernando001",
+  "personal_information":{
+     "firstName": "Jimmy Fernando",
+     "lastName": "Castillo Crespín",
+     "gender": "male",
+     "marital_status": "soltero",
+     "date_of_birth": "30-09-1994",
+     "email": [
+       "jimmyfernandocastillo@gmail.com",
+       "fernando.castillo@u4innovation.com"
+       ],
+     "phone": [
+       "0989927434",
+       "0991851033"
+       ],
+     "dni": "0706829116",
+     "age": 27
+  },
+  "organ_donor":false,
+  "alergies":false,
+  "location":{
+    "address": "Gonzales Rubio",
+    "postalCode": 153,
+    "city": "Machala",
+    "region": "El Oro",
+    "country": "Ecuador"
+  },
+  "education":[
+      {
+      "start-date": "2000",
+      "end-date": "2006",
+      "institution": {
+            "name": "Victor Antonio Moreno Mosquera",
+            "city": "Puerto Bolívar",
+            "country": "Ecuador",
+            "level": "primary"
+        }
+      },
+      {
+      "start-date": "2006",
+      "end-date": "2012",
+      "institution": {
+            "name": "Colegio Nacional Mixto Machala",
+            "city": "Machala",
+            "country": "Ecuador",
+            "level": "secondary"
+        }
+      },
+      {
+      "start-date": "2013",
+      "end-date": "2018",
+      "institution": {
+            "name": "Universidad Técnica de Machala",
+            "city": "Machala",
+            "country": "Ecuador",
+            "level": "university"
+        }
+      },
+      {
+      "start-date": "2019",
+      "end-date": "2021",
+      "institution": {
+            "name": "Universidad Iberoamericana de México",
+            "city": "México",
+            "country": "México",
+            "level": "masters_degree"
+        }
+      },
+      {
+      "start-date": "2021",
+      "end-date": "2022",
+      "institution": {
+           "name": "Universidad Técnica de Machala",
+            "city": "Machala",
+            "country": "Ecuador",
+            "level": "masters_degree"
+        }
+      }
+  ],
+  "skills_techniques": [
+    "web_programming",
+    "google_cloud",
+    "app_programming",
+    "databases",
+    "SCRUM"
+  ],
+  "skills_cualitatives": [
+    "responsibility",
+    "sociable",
+    "resilience",
+    "proactive",
+    "leader"
+  ],
+ "works":[
+      {
+      "start-date": "2019",
+      "end-date": "present",
+      "company": {
+            "name": "U4innovation",
+            "city": "Machala",
+            "country": "Ecuador",
+            "job": "semi senior programmer"
+        }
+      }
+  ],
+   "languages": [
+      {
+          "name": "Spanish",
+          "level": "C1"
+      },
+      {
+          "name": "English",
+          "level": "B1"
+      }
+  ],
+   "hobbies": [
+    "read",
+    "listen_music",
+    "watch_movie",
+    "study",
+    "gym"
+  ],
+  "references":[
+    {
+    "firstName": "Juan",
+    "lastName": "Mendoza",
+    "phone": "0991342322",
+    "email": "juan@gmail.com",
+    "country": "Ecuador"
+    },
+    {
+    "firstName": "Andrea",
+    "lastName": "Mosquera",
+    "phone": "0991342322",
+    "email": "andrea@gmail.com",
+    "country": "Ecuador"
+    }
+  ]
+}

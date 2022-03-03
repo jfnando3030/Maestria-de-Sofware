@@ -1,0 +1,50 @@
+Person :Thing
+Escritor :Ability
+Colombia :Country
+Noruego :language
+Frances :language
+Novela :Creation
+100AnnosDeSoledad :Novela
+GabrielGarciaMarquez :Person
+PremioNobeldeLiteratura :Award
+ObraMaestra :Attribute
+Hispanoamerica :Region
+Español :language
+IVCongresoInternacionaldelaLenguaEspañola :congress
+CartagenaDeIndias :Location
+ListaDeLas100MejoresNovelasLibros :award
+ElMundo :newspaper
+LeMonde :newspaper
+ClubDeLibros :club
+BuenosAires :city
+Ediciones :books
+EditorialSudamericana :company
+Ejemplares :printed
+Idiomas :language
+
+100AnnosDeSoledad -> Novela :isA
+GabrielGarciaMarquez -> Person :isA
+GabrielGarciaMarquez -> Escritor :isA
+GabrielGarciaMarquez -> Colombia :born
+GabrielGarciaMarquez -> 100AnnosDeSoledad :writer
+GabrielGarciaMarquez -> PremioNobeldeLiteratura :winner
+100AnnosDeSoledad -> ObraMaestra :isA
+ObraMaestra -> Hispanoamerica :belongs
+Hispanoamerica -> Español :speak
+ObraMaestra -> IVCongresoInternacionaldelaLenguaEspañola :granted
+IVCongresoInternacionaldelaLenguaEspañola -> CartagenaDeIndias  :celebrated
+ElMundo -> Español :origin
+ElMundo -> ListaDeLas100MejoresNovelasLibros :included
+LeMonde -> Frances :origin
+LeMonde -> ListaDeLas100MejoresNovelasLibros :included
+ClubDeLibros -> Noruego :origin
+ClubDeLibros -> ListaDeLas100MejoresNovelasLibros :included
+GabrielGarciaMarquez -> Español :speak
+Colombia -> Hispanoamerica :belongs
+CartagenaDeIndias -> Colombia :belongs
+Novela -> Ediciones :has
+Ediciones -> BuenosAires :published
+BuenosAires -> EditorialSudamericana :by
+EditorialSudamericana -> Hispanoamerica :belongs
+EditorialSudamericana -> Ejemplares :printed
+Ejemplares -> Idiomas :translated
