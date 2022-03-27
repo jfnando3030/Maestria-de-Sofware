@@ -1,7 +1,7 @@
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract Contrato is ERC20{
-mapping(address = uint256) public amount;
+mapping(address => uint256) public amount;
 uint256 totalAmount;
 string tokenName;
 string tokenSymbol;
@@ -22,7 +22,7 @@ return amount[to_who];
 }
 function transfer(address to_a,uint256 _value) public
 returns(bool){
-require(_value&lt;=amount[msg.sender]);
+require(_value<=amount[msg.sender]);
 amount[msg.sender]=amount[msg.sender]-_value;
 amount[to_a]=amount[to_a]+_value;
 return true;
